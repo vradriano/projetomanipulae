@@ -30,10 +30,23 @@ const CardWrapper = styled.main`
 const CardContainer = styled.div`
   margin-top: 3rem;
   border-radius: 5px;
-  background-color: white;
-  height: 17.00rem;
-  width: 15.00rem;
-  margin: 0 auto 4rem; auto;  
+  background-color: grey;
+  height: 23.00rem;
+  width: 16.00rem;
+  margin: 0 auto 4rem auto;
+  
+    div {
+      justify-content: flex-end;
+      height: 60px;
+      margin-top: 244px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      text-align: center;
+      
+      h4, h5 {
+        margin-bottom: 1rem;
+      }
+    }
 `
 
 const Form = styled.form`

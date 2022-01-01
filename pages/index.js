@@ -1,8 +1,7 @@
-import { Container, CardContainer, CardWrapper, Form } from './styles'
+import { Container, CardContainer, CardWrapper, CardInfo, Form } from './styles'
 import { useEffect, useState } from 'react';
 
 import axios from 'axios'
-
 
 export default function Home() {
   const CLIENT_ID = "5a51aad35e2c48e787a5580a99b465f3"
@@ -43,41 +42,20 @@ export default function Home() {
 
   return (
     <Container>
-      <Form onSubmit={searchArtists}>
-        <input type="text" onChange={e => setSearchKey(e.target.value)} />
-        <button type={"submit"}>Submit</button>
+      <Form onChange={searchArtists}>
+        <input type="search" onChange={e => setSearchKey(e.target.value)} />
       </Form>
 
       <CardWrapper>
         <CardContainer>
-          Hello
-        </CardContainer>
-        <CardContainer>
           
-        </CardContainer>
-        <CardContainer>
-          
-        </CardContainer>
-        <CardContainer>
-          
-        </CardContainer>
-        <CardContainer>
-          
-        </CardContainer>
-        <CardContainer>
-          
-        </CardContainer>
-        <CardContainer>
-          
-        </CardContainer>
-        <CardContainer>
-          
-        </CardContainer>
-        <CardContainer>
-          
+          <div>
+            <h4>Título Música</h4>
+            <h5>Nome Cantor</h5>
+            <h6>Duração</h6>  
+          </div>
         </CardContainer>
       </CardWrapper>
-
       <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Spotify</a>
     </Container>
   )
