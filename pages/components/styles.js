@@ -9,7 +9,7 @@ const Container = styled.div`
   max-width: 1120px;
   height: 5rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2rem; 
 
   display: flex;
   justify-content: space-between;
