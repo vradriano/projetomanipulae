@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'; 
+import { useEffect, useState } from 'react';
+import axios from 'axios'
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
   const RESPONSE_TYPE = "token"
 
   const [token, setToken] = useState("")
+  const [searchKey, setSearchKey] = useState("")
 
   useEffect(() => {
     const hash = window.location.hash
@@ -18,13 +20,32 @@ export default function Home() {
 
       window.location.hash = ""
       window.localStorage.setItem("token", token)
-      setToken(token)
     }
 
+    setToken(token)
   }, [])
+
+  const searchArtists = async (e) => {
+    const { data } = await axios.get("https://api.spotify.com/v1/search", {
+      headers: {
+        Authorization: `Bearer ${token}` 
+      },
+      params: {
+        q: searchKey,
+        type: "artist"
+      }
+    })
+
+    console.log(data)
+  }
 
   return (
     <div>
+      <form onSubmit={searchArtists}>
+        <input type="text" onChange={e => setSearchKey(e.target.value)} />
+        <button type={"submit"}>Submit</button>
+      </form>
+
       <h1>Manipulaê</h1>
       <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Spotify</a>
     </div>
