@@ -1,4 +1,6 @@
+import { Container, CardContainer, CardWrapper, Form } from './styles'
 import { useEffect, useState } from 'react';
+
 import axios from 'axios'
 
 
@@ -40,14 +42,43 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <form onSubmit={searchArtists}>
+    <Container>
+      <Form onSubmit={searchArtists}>
         <input type="text" onChange={e => setSearchKey(e.target.value)} />
         <button type={"submit"}>Submit</button>
-      </form>
+      </Form>
 
-      <h1>Manipulaê</h1>
+      <CardWrapper>
+        <CardContainer>
+          Hello
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+        <CardContainer>
+          
+        </CardContainer>
+      </CardWrapper>
+
       <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Spotify</a>
-    </div>
+    </Container>
   )
 }

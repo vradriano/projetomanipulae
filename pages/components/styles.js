@@ -6,7 +6,7 @@ const Header = styled.header`
 `
 
 const Container = styled.div`
-  max-width: 1120px;
+  max-width: 1220px;
   height: 5rem;
   margin: 0 auto;
   padding: 0 2rem; 

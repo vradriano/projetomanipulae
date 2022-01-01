@@ -29,7 +29,7 @@ body {
   color: var(--gray-100);
 }
 
-body, input, textarea, button {
+body, button {
   font: 500 16px 'inter', sans-serif;
 }
 
